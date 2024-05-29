@@ -29,21 +29,33 @@ const CommandMenu = () => {
   }, [])
 
   return (
-    <Command.Dialog open={open} onOpenChange={setOpen} label="Global Command Menu">
+    <Command filter={(value, search, keywords) => {
+      const extendValue = value + ' ' + keywords.join(' ')
+      if (extendValue.includes(search)) return 1
+      return 0
+    }}>
+    {/* <Command.Dialog open={open} onOpenChange={setOpen} label="Global Command Menu"> */}
       <Command.Input />
       <Command.List>
         <Command.Empty>No results found.</Command.Empty>
 
-        <Command.Group heading="Letters">
-          <Command.Item>a</Command.Item>
-          <Command.Item>b</Command.Item>
-          <Command.Separator />
-          <Command.Item>c</Command.Item>
+        
+        
+        <Command.Group heading="Fiction">
+          <Command.Item keywords={['archer', 'jeffrey']}>The Clifton Chronicles</Command.Item>
+          <Command.Item keywords={['yerin', 'lindon']}>Cradle</Command.Item>
+          
+        </Command.Group>
+        <Command.Separator />
+        <Command.Group heading="F1 teams">
+          <Command.Item keywords={['verstappen', 'max']}>Redbull</Command.Item>
+          <Command.Item keywords={['hamilton', 'bottas']}>Mercedes</Command.Item>
+          <Command.Item>Aston Martin</Command.Item>
         </Command.Group>
 
-        <Command.Item>Apple</Command.Item>
       </Command.List>
-    </Command.Dialog>
+    {/* </Command.Dialog> */}
+    </Command>
   )
 }
 
