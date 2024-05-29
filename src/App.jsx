@@ -47,16 +47,7 @@ const CommandMenu = () => {
           return <Page page={item} />;
         })}
       </div> */}
-      <div
-        style={{
-          backgroundColor: "gray",
-          padding: "4px",
-          borderRadius: "4px",
-          width: "max-content",
-        }}
-      >
-        {page}
-      </div>
+
       <Command
         filter={(value, search, keywords) => {
           const extendValue = value + " " + keywords.join(" ");
@@ -72,6 +63,18 @@ const CommandMenu = () => {
           }
         }}
       >
+        {page && (
+          <div
+            style={{
+              backgroundColor: "gray",
+              padding: "4px",
+              borderRadius: "4px",
+              width: "max-content",
+            }}
+          >
+            {page}
+          </div>
+        )}
         {/* <Command.Dialog open={open} onOpenChange={setOpen} label="Global Command Menu"> */}
 
         <Command.Input value={search} onValueChange={setSearch} />
