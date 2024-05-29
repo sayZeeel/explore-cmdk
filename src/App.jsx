@@ -1,7 +1,14 @@
 import { React, useState, useEffect } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
+import './index.module.scss'
+import './globals.scss'
+import './vercel.scss'
 import './App.css'
+
+import * as Popover from '@radix-ui/react-popover'
+
+
 
 import { Command } from 'cmdk'
 
@@ -45,7 +52,7 @@ function App() {
 
   return (
     <>
-      <CommandMenu />
+      
       <div>
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
@@ -55,6 +62,7 @@ function App() {
         </a>
       </div>
       <h1>Vite + React</h1>
+      <CommandMenu />
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
