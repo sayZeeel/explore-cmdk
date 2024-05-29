@@ -94,7 +94,19 @@ const CommandMenu = () => {
                   The Clifton Chronicles
                 </Command.Item>
                 <Command.Item keywords={["yerin", "lindon"]}>
-                  Cradle
+                  <div style={{ display: "flex", gap: "20px" }}>
+                    Cradle
+                    <div
+                      style={{
+                        backgroundColor: "yellow",
+                        padding: "2px",
+                        borderRadius: "2px",
+                        width: "max-content",
+                      }}
+                    >
+                      must read
+                    </div>
+                  </div>
                 </Command.Item>
               </Command.Group>
               <Command.Separator />
